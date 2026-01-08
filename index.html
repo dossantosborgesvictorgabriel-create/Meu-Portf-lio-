@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meu Portifólio</title>
+</head>
+
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Ínicio</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/minhaa.jpeg" alt="Victorgabriel" class="foto-perfil" />
+        <h1>Victor Gabriel</h1>
+        <p class="sub-titulo">Desenvolverdor Frond-End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá, sou desenvolverdor Frond-End sou Apaixonado em Criar Experiencias ou Projetos de Sites, pretendo
+                Aprender mais tecnologia como React Entre Outros.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo"> Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Tela de Login</h3>
+                    <p class="paragrafo-projetos">Projeto de Login, Apenas com HTML CSS.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Captura de tela 2025-05-17 130007.png" alt="projeto 2" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Cafeteria</h3>
+                    <p class="paragrafo-projetos">Loja Virtual de Café.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/EcoTech.png" alt="EcoTech" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">EcoTech</h3>
+                    <p class="paragrafo-projetos">Loja da EcoTech.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Microsoft.png" alt="Microsoft" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Microsoft</h3>
+                    <p class="paragrafo-projetos">Uma Recriação da Microsoft.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/animacacoes.png" alt="Animações" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Animações Mágico</h3>
+                    <p class="paragrafo-projetos">Criador Mágico Animações com AI</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/clima.png" alt="Microsoft" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Clima Mundial</h3>
+                    <p class="paragrafo-projetos">Climas de Países MUndial</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Instagram.png" alt="Instagram" class="projetos-imagem">
+                <div class="caix-info-projetos">
+                    <h3 class="info-projetos">Instagram</h3>
+                    <p class="paragrafo-projetos">InterFace do Instagram.</p>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarDados(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="none">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="button-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+</body>
+<script>
+    function enviarDados(event) {
+            event.preventDefault()
+
+            const none = document.getElementById('none');
+            const mensagem = document.getElementById('mensagem');
+            const telefone = '5564981343597'
+
+
+            const texto = `Olá, me Chamo ${none}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?t=${mensagem}`
+
+            console.log(url)
+
+            window.open(url, '_blank')
+        }
+</script>
+
+</html>
